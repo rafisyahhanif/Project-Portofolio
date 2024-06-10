@@ -1,0 +1,497 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+:root {
+  --primaryTextColor: #232e35; /* Untuk title atau judul */
+  --secondaryTextColor: #656d72; /* Untuk text biasa seperti paragraph */
+
+  --borderColor: #f1f1f1;
+  --lineColor: #d9d9d9; /* untuk line di pre-title */
+
+  --primaryBackgroundColor: #fff;
+  --secondaryBackgroundColor: #fbfbfb;
+  --thirdBackgroundColor: #f5f3fe;
+
+  --primaryIconColor: #7e74f1;
+  --primaryIconColorHover: #5d51e8;
+
+  --sectionPadding: 6rem 0;
+
+  --itemBorderRadius: 0.7rem;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'roboto', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+  color: var(--primaryTextColor);
+}
+
+.p {
+  font-size: 1rem;
+  line-height: 2rem;
+  color: var(--primaryIconColorHover);
+}
+
+p,
+span,
+input,
+label,
+textarea,
+li {
+  color: var(--secondaryTextColor);
+}
+
+a {
+  text-decoration: none;
+}
+
+.main-container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1366px) {
+  .main-container {
+    width: 90%;
+  }
+}
+
+/* Button */
+.btn {
+  padding: 1rem 1.5rem;
+  background: white;
+  border: 1.5px solid var(--borderColor);
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.btn :hover {
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+}
+
+/* tittle */
+
+.section-tittle {
+  margin: 1rem 0 4rem;
+  font-size: 2rem;
+  text-align: center;
+}
+.pre-tittle {
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  color: var(--secondaryTextColor);
+  position: relative;
+  padding-left: 40px;
+  width: fit-content;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.pre-tittle::before {
+  content: '';
+  width: 30px;
+  height: 1px;
+  background: var(--lineColor);
+  position: absolute;
+  display: block;
+  left: 0;
+  top: 50%;
+}
+
+/* layout */
+
+.grid3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+}
+/* untuk bagian responsive hanya dengan menggunakan 1 baris code */
+
+/*Logo and Navigation menu */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem 0;
+}
+
+.nav ul {
+  list-style: none;
+  display: flex;
+  gap: 3rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.logo a {
+  color: var(--primaryTextColor);
+}
+
+nav ul li {
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a {
+  color: var(--primaryTextColor);
+}
+
+/* burger */
+.burger div {
+  width: 25px;
+  height: 2px;
+  background-color: #000;
+  margin: 7px;
+  transition: all 0.3s;
+  z-index: 99;
+}
+
+.toggle-burger {
+  display: none;
+  z-index: 99;
+  position: fixed;
+  top: 33px;
+  right: 35px;
+}
+
+/* hero section */
+#hero {
+  height: 720px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.hero-name {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0.5rem 0 1rem;
+}
+
+.hero-name span {
+  color: var(--primaryIconColor);
+}
+
+.hero-right img {
+  width: 90%;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+/* services section */
+#Services {
+  background-color: var(--secondaryBackgroundColor);
+  padding: var(--sectionPadding);
+}
+
+.Services .pre-tittle {
+  margin: 0 auto;
+}
+
+.Services-tittle {
+  text-align: center;
+}
+
+.Services {
+  padding: 3rem 2rem;
+  text-align: center;
+  background: var(--primaryBackgroundColor);
+  border-radius: var(--itemBorderRadius);
+}
+
+.Services h4 {
+  margin: 1.5rem 0;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.service-icon {
+  background: var(--thirdBackgroundColor);
+  width: fit-content;
+  margin: 0 auto;
+  padding: 1rem 1.3rem;
+  border-radius: 0.5rem;
+}
+
+.service-icon svg {
+  fill: var(--primaryIconColor);
+}
+
+/* portofolio Setion */
+#portofolios {
+  padding: var(--sectionPadding);
+}
+
+.grid {
+  display: flex;
+  gap: 1rem;
+  /* flex-wrap: wrap; */
+}
+.portofolio {
+  border-radius: var(--itemBorderRadius);
+  overflow: hidden;
+  border: 1px solid var(--borderColor);
+  display: flex;
+  flex-direction: column;
+}
+
+/* .portofolio-cover {
+  height: 150px;
+  
+} */
+
+.portofolio-cover img {
+  height: 400px;
+  width: 100%;
+  object-fit: cover;
+
+  /* display: block; */
+}
+
+.portofolio-info {
+  padding: 2rem 1.5rem;
+}
+
+.portofolio-tittle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.portofolio h4 {
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.portofolio-tittle a svg:hover {
+  fill: var(--primaryIconColorHover);
+}
+
+.portofolio-tittle a svg {
+  transition: 0.3s ease-in-out;
+}
+
+.portofolio-tags {
+  /* display: flex; */
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.portofolio-tags div {
+  font-size: 0.9rem;
+  border: 1px solid var(--borderColor);
+  padding: 0.4rem 1rem;
+  color: var(--secondaryTextColor);
+}
+
+/* skills & Education */
+#skills {
+  padding: var(--sectionPadding);
+  background: var(--secondaryBackgroundColor);
+}
+
+.skills-grid {
+  display: flex;
+  /* grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); */
+  gap: 3rem;
+  flex-direction: row-reverse;
+}
+
+/* .skills-grid table {
+  order: -1;
+} */
+
+.skills-left, .skills-right, table {
+  flex: 1;
+}
+.Education {
+  display: flex;
+  gap: 2rem;
+}
+
+.Education .line {
+  padding: 0 0.7rem;
+}
+
+.Education .line div {
+  width: 5px;
+  height: 100%;
+  background: var(--borderColor);
+  position: relative;
+}
+
+.Education-info p {
+  margin: 6rem 0 1.5rem;
+}
+
+.Education-Years {
+  margin-bottom: 3rem;
+}
+
+/* table skills */
+.table-container {
+  overflow-x: auto;
+}
+.table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.th,
+.td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.progress-bar {
+  background-color: #1fc55f;
+  height: 20px;
+  position: relative;
+  border-radius: 10px;
+}
+
+/* .progress-bar span {
+  background-color: #4CAF50;
+  color: rgb(34, 202, 90);
+  padding: 2px 5px;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+} */
+
+/* tanda titik */
+.Education .line div::before {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background: var(--borderColor);
+  border-radius: 50%;
+  position: absolute;
+  left: -6px;
+}
+
+/* contact section */
+#Contact {
+  padding: var(--sectionPadding);
+}
+
+.Contact {
+  display: flex;
+  /* grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); */
+  gap: 12rem;
+  justify-content: center;
+}
+
+.Contact-form div {
+  margin-bottom: 1.5rem;
+}
+
+.Contact-form input, .Contact-form textarea {
+  width: 80%;
+  height: 1rem 1.4rem;
+  font-family: 'Roboto' sans-serif;
+  background: var(--secondaryBackgroundColor);
+  border: 1px solid black;
+  border-radius: 3px;
+  resize: none;
+}
+
+.Contact-form input::placeholder,
+.Contact-form textarea::placeholder {
+  color: #9d9fa1;
+}
+
+.Contact-form input:focus,
+.Contact-form textarea:focus {
+  outline: none;
+  border: 1px solid #7d7d7d;
+}
+
+.btn-submite {
+  width: 100%;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primaryIconColor);
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.btn-submite:hover {
+  background: var(--primaryIconColorHover);
+}
+
+.Contact-item {
+  display: flex;
+  gap: 1.8rem;
+  margin-bottom: 2.7rem;
+}
+
+.Contact-item-icon {
+  background-color: var(--thirdBackgroundColor);
+  width: 55px;
+  height: 55px;
+  border-radius: 9px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Contact-item-icon svg {
+  fill: var(--primaryIconColor);
+}
+
+.Contact-item-detail h4 {
+  margin: 1rem;
+}
+
+
+/* footer */
+
+footer {
+  padding: 4rem 0;
+  background: var(--secondaryBackgroundColor);
+  text-align: center;
+}
+
+.footer-icons {
+  margin-bottom: 1rem;
+}
+
+.footer-icons a {
+  margin: 0 0.5rem;
+}
+
+.footer-icons svg {
+  fill: #3e3f40;
+}
+
+.footer-icons a:hover svg {
+  fill: #000;
+}
+
+
